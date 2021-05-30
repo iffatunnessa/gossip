@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import gossipLogo from '../../../image/gossip-logo-white.png';
 import { Slide } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,6 +45,8 @@ const NavBar = () => {
                             color="default"
                             size="large"
                             className={classes.loginBtn}
+                            component={Link}
+                            to ="/login"
                         >
                             Login
                     </Button>
