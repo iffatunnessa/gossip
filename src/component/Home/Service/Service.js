@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         margin: 80,
-        textAlign:"center"
+        textAlign:"center",
     },
     loginBtn: {
         width: 100,
