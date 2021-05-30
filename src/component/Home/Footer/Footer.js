@@ -7,7 +7,7 @@ import { blue } from '@material-ui/core/colors';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        background: "blue",
+        background: 'linear-gradient(180deg, rgba(69,2,251,1) 0%, rgba(111,35,187,1) 0%, rgba(112,36,189,1) 0%, rgba(107,24,194,1) 39%, rgba(108,119,230,1) 100%)',
         padding:80,
         color: "white",
         textAlign: "center"

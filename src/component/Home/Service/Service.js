@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Slide from '@material-ui/core/Slide';
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         width: 100,
         height: 50,
         borderRadius: "30px",
-        marginRight: 150
+        marginRight: 150,
     }
 }));
 
@@ -29,6 +30,8 @@ const Service = () => {
                         color="primary"
                         size="large"
                         className={classes.loginBtn}
+                        component={Link}
+                        to ="/login"
                     >
                         Login
                 </Button>
