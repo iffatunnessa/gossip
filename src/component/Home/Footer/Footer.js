@@ -8,7 +8,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         background: "blue",
-        padding:80
+        padding:80,
+        color: "white",
+        textAlign: "center"
     },
     paper: {
         padding: theme.spacing(2),
@@ -24,16 +26,11 @@ const Footer = () => {
     return (
         <div className={classes.root}>
             <Grid container spacing={5}>
-                <Grid item lg={4} md={6} xs={12} sm={12}>
-                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                <Grid item xs={12} sm={12}>
+                   Create Your Own Community!
                 </Grid>
-                <Grid item lg={4} md={6} xs={12} sm={12}>
-                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
-                </Grid>
-                <Grid item lg={4} md={6} xs={12} sm={12}>
-                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
-                </Grid>
-            </Grid>
+            </Grid> 
+            <small >@ALL RIGHTS RESERVE TO GOSSIP</small>
         </div>
     );
 };

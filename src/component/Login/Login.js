@@ -18,7 +18,7 @@ const Login = () => {
           </div>
         <div className="child_div">
         <Button onClick={signIn} variant="contained" color="primary">
-         GoogleSinginIn
+         Google Sign In
         </Button>
         
         </div>
