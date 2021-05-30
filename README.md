@@ -1,4 +1,4 @@
-###Live Site: https://gossip-4ad78.web.app/
+Live Site: https://gossip-4ad78.web.app/
 
 Presentation: https://docs.google.com/presentation/d/1LrD4QWPCLBLB5_a0_fJCwyNMTegapymk-8HA4zHeWsI/edit?usp=sharing
 
@@ -15,7 +15,7 @@ Rashedul Alam:
 https://github.com/rashedulalam362
 
 
-#Features:
+Features:
 1. Responsive home Page
 2. Google Authentication Login System
 3. Slide Bar
