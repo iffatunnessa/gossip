@@ -12,9 +12,7 @@ export const appSlice = createSlice({
       state.app += action.payload
 
     },
-
   },
-
 });
 
 export const { setChannelId } = appSlice.actions;

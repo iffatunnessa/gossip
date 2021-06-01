@@ -11,61 +11,63 @@ import { Avatar } from '@material-ui/core';
 import MicIcon from '@material-ui/icons/Mic';
 import SettingsIcon from '@material-ui/icons/Settings';
 import HeadsetIcon from '@material-ui/icons/Headset';
+import { auth } from '../../firebase';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
-    
+
         <div className='sidebar'>
             <div className="sidebar-top">
                 <h3>GOSSIP LIST</h3>
-                <ExpandMoreIcon/>
+                <ExpandMoreIcon />
             </div>
 
             <div className="sidebar-channels">
                 <div className="sidebar-channels-header">
                     <div className="sidebar-header">
-                    <ExpandMoreIcon/>
-                    <h4>Text Channels</h4>
+                        <ExpandMoreIcon />
+                        <h4>Text Channels</h4>
                     </div>
-                    <AddIcon className='sidebar-addChannel'/>
-                    
+                    <AddIcon className='sidebar-addChannel' />
+
                 </div>
                 <div className="sidebar-channelsList">
-                <SidebarChannel/>
-                <SidebarChannel/>
-                <SidebarChannel/>
-                <SidebarChannel/>
-            </div>
+                    <SidebarChannel />
+                    <SidebarChannel />
+                    <SidebarChannel />
+                    <SidebarChannel />
+                </div>
             </div>
             <div className="sidebar-voice">
-                <SignalCellularAltIcon className='sidebar-voiceIcon' fontSize='large'/>
+                <SignalCellularAltIcon className='sidebar-voiceIcon' fontSize='large' />
                 <div className="sidebar-voiceInfo">
                     <h3>Voice Connected</h3>
                     <p>Stream</p>
                 </div>
 
                 <div className="sidebar-voiceIcons">
-                    <InfoIcon/>
-                    <Call/>
+                    <InfoIcon />
+                    <Call />
                 </div>
 
             </div>
 
             <div className="sidebar-profile">
-                <Avatar src='https://img.freepik.com/free-photo/happy-smiling-baby-towel-after-bathing_106368-652.jpg?size=626&ext=jpg'/>
+                <Avatar onClick={() => auth.signOut()} component={Link} to ='/home' src='https://img.freepik.com/free-photo/happy-smiling-baby-towel-after-bathing_106368-652.jpg?size=626&ext=jpg' />
                 <div className="sidebar-profileInfo">
                     <h3>@Zannat</h3>
                     <p>#thisIsMyId</p>
                 </div>
                 <div className="sidebar-profileIcons">
-                    <MicIcon/>
+                    <MicIcon />
                     <HeadsetIcon />
                     <SettingsIcon />
                 </div>
             </div>
-           
 
-            
+
+
         </div>
     );
 };
