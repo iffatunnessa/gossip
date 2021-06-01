@@ -8,9 +8,7 @@ import Home from './component/Home/Home/Home';
 import Login from './component/Login/Login';
 import NotFound from './component/NotFound/NotFound';
 import './App.css';
-import Chat from './component/Chat/Chat';
 import { useDispatch, useSelector } from 'react-redux'
-import Sidebar from './component/SlideBar/Sidebar';
 import { selectUser } from './features/userSlice';
 import { auth } from './firebase';
 import { login, logout } from './features/userSlice';
@@ -43,9 +41,6 @@ const App = () => {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/message">
-              <ChatArea />
-            </Route>
           {user ? (
             <Route path="/message">
               <ChatArea />

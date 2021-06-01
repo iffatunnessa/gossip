@@ -4,6 +4,7 @@ import {auth,provider} from '../../firebase';
 import Button from '@material-ui/core/Button';
 import gossipLogoBlack from '../../image/gossip-logo-black.png'
 import gossipLogoPurple from '../../image/logo.png'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const signIn =()=>{
@@ -18,7 +19,7 @@ const Login = () => {
               <img src={gossipLogoBlack} alt="" />
           </div>
         <div className="child_div">
-        <Button onClick={signIn} variant="contained" color="primary" size='large'>
+        <Button onClick={signIn} component={Link} to="/message" variant="contained" color="primary" size='large'>
          Google Sign In
         </Button>
         </div>
