@@ -17,6 +17,7 @@ import ChatArea from './component/ChatArea/ChatArea';
 const App = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log(authUser);
@@ -33,7 +34,7 @@ const App = () => {
         dispatch(logout());
       }
     })
-  }, [])
+  }, [dispatch])
   return (
     <Router>
       <div>
