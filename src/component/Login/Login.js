@@ -21,9 +21,7 @@ const Login = () => {
         <Button onClick={signIn} variant="contained" color="primary" size='large'>
          Google Sign In
         </Button>
-        
         </div>
-          
         </div>
     );
 };

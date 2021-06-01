@@ -1,16 +1,15 @@
 import React from 'react';
 import './Chat.css'
-import ChatHeader from './ChatHeader';
+import ChatHeader from '../ChatHeader/ChatHeader';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 import GifIcon from '@material-ui/icons/Gif';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
-import Message from './Message';
+import Message from '../Message/Message';
 
 const Chat = () => {
     return (
         <div className='chat'>
-            
             <ChatHeader />
             <div className="chat-messages">
                 <Message />

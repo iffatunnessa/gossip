@@ -2,7 +2,7 @@ import React from 'react';
 import './Sidebar.css'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
-import SidebarChannel from './SidebarChannels';
+import SidebarChannel from '../SlideBarChannel/SidebarChannels';
 import SignalCellularAltIcon from '@material-ui/icons/SignalCellularAlt';
 import InfoIcon from '@material-ui/icons/Info';
 import CallIcon from '@material-ui/icons/Call';

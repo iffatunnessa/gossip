@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,19 +7,54 @@ import {
 import Home from './component/Home/Home/Home';
 import Login from './component/Login/Login';
 import NotFound from './component/NotFound/NotFound';
+import './App.css';
+import Chat from './component/Chat/Chat';
+import { useDispatch, useSelector } from 'react-redux'
+import Sidebar from './component/SlideBar/Sidebar';
+import { selectUser } from './features/userSlice';
+import { auth } from './firebase';
+import { login, logout } from './features/userSlice';
+import ChatArea from './component/ChatArea/ChatArea';
 
-<<<<<<< HEAD
 const App = () => {
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log(authUser);
+      if (authUser) {
+        dispatch(
+          login({
+            uid: authUser.uid,
+            photo: authUser.photoURL,
+            email: authUser.email,
+            displayName: authUser.displayName,
+          })
+        )
+      } else {
+        dispatch(logout());
+      }
+    })
+  }, [])
   return (
     <Router>
       <div>
         <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/message">
+              <ChatArea />
+            </Route>
+          {user ? (
+            <Route path="/message">
+              <ChatArea />
+            </Route>
+          ) : (
+            <Route path="/home">
+              <Home />
+            </Route>
+          )} 
           <Route exact path="/">
             <Home />
           </Route>
@@ -29,28 +64,8 @@ const App = () => {
         </Switch>
       </div>
     </Router>
-=======
-import './App.css';
-import Chat from './component/Chat';
-import {useSelector} from 'react-redux'
-import Sidebar from './component/Sidebar';
-import {selectUser} from './component/userSlice';
 
 
-function App() {
-  const user = useSelector(selectUser);
-  return (
-    <div className="App">
-      {user ? (
-        <>
-        <Sidebar/>
-        <Chat/>
-        </>
-      ):(
-        <h2>you need to login</h2>
-      )}
-    </div>
->>>>>>> b48f38f20a7e438b5b969f64d5f6367929b6bd65
   );
 };
 
