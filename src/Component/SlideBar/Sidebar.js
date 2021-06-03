@@ -10,13 +10,9 @@ import { Avatar } from '@material-ui/core';
 import MicIcon from '@material-ui/icons/Mic';
 import SettingsIcon from '@material-ui/icons/Settings';
 import HeadsetIcon from '@material-ui/icons/Headset';
-<<<<<<< HEAD
-import db, {auth} from '../../firebase';
+import db, { auth } from '../../firebase';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/userSlice';
-=======
-import { auth } from '../../firebase';
->>>>>>> 3278b7b41bb82afb6d5a5c01021a21587fe4e538
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -30,10 +26,10 @@ const Sidebar = () => {
                 channel: doc.data(),
             })))
         })
-    } , [])
+    }, [])
     const handleChannelName = () => {
         const channelName = prompt('Enter a new channel name')
-        if(channelName){
+        if (channelName) {
             db.collection('channels').add({
                 channelName: channelName,
             })
@@ -53,31 +49,19 @@ const Sidebar = () => {
                         <ExpandMoreIcon />
                         <h4>Text Channels</h4>
                     </div>
-<<<<<<< HEAD
-                    <AddIcon onClick={handleChannelName()} className='sidebar-addChannel'/>
-                    
-                </div>
-                <div className="sidebar-channelsList">
-                    {channels.map(({id, channel})=> (
-                     <SidebarChannel 
-                     key={id} 
-                     id={id} 
-                     channelName={channel.channelName}/>    
-                    ))}
-               
-          
-            </div>
-=======
-                    <AddIcon className='sidebar-addChannel' />
+                    <AddIcon onClick={handleChannelName} className='sidebar-addChannel' />
 
                 </div>
                 <div className="sidebar-channelsList">
-                    <SidebarChannel />
-                    <SidebarChannel />
-                    <SidebarChannel />
-                    <SidebarChannel />
+                    {channels.map(({ id, channel }) => (
+                        <SidebarChannel
+                            key={id}
+                            id={id}
+                            channelName={channel.channelName} />
+                    ))}
+
+
                 </div>
->>>>>>> 3278b7b41bb82afb6d5a5c01021a21587fe4e538
             </div>
             <div className="sidebar-voice">
                 <SignalCellularAltIcon className='sidebar-voiceIcon' fontSize='large' />
@@ -87,26 +71,17 @@ const Sidebar = () => {
                 </div>
 
                 <div className="sidebar-voiceIcons">
-<<<<<<< HEAD
-                    <InfoIcon/>
-                    <CallIcon/>
-=======
                     <InfoIcon />
-                    <Call />
->>>>>>> 3278b7b41bb82afb6d5a5c01021a21587fe4e538
+                    <CallIcon />
                 </div>
 
             </div>
 
             <div className="sidebar-profile">
-<<<<<<< HEAD
-                <Avatar onClick={() => auth.signOut()} src={user.photo}/>
-=======
-                <Avatar onClick={() => auth.signOut()} component={Link} to ='/home' src='https://img.freepik.com/free-photo/happy-smiling-baby-towel-after-bathing_106368-652.jpg?size=626&ext=jpg' />
->>>>>>> 3278b7b41bb82afb6d5a5c01021a21587fe4e538
+                <Avatar onClick={() => auth.signOut()} component={Link} to ='/home' src={user.photo} />
                 <div className="sidebar-profileInfo">
                     <h3>{user.displayName}</h3>
-                    <p>{user.uid.subString(0,5)}</p>
+                    <p>#{user.uid}</p>
                 </div>
                 <div className="sidebar-profileIcons">
                     <MicIcon />
