@@ -6,14 +6,14 @@ import SidebarChannel from '../SlideBarChannel/SidebarChannels';
 import SignalCellularAltIcon from '@material-ui/icons/SignalCellularAlt';
 import InfoIcon from '@material-ui/icons/Info';
 import CallIcon from '@material-ui/icons/Call';
-import Call from '@material-ui/icons/Call';
 import { Avatar } from '@material-ui/core';
 import MicIcon from '@material-ui/icons/Mic';
 import SettingsIcon from '@material-ui/icons/Settings';
 import HeadsetIcon from '@material-ui/icons/Headset';
-import db, {auth} from './firebase'
+import db, {auth} from '../../firebase';
 import { useSelector } from 'react-redux';
-import { selectUser } from './userSlice';
+import { selectUser } from '../../features/userSlice';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const user = useSelector(selectUser)
@@ -36,24 +36,24 @@ const Sidebar = () => {
         }
     }
     return (
-    
+
         <div className='sidebar'>
             <div className="sidebar-top">
                 <h3>GOSSIP LIST</h3>
-                <ExpandMoreIcon/>
+                <ExpandMoreIcon />
             </div>
 
             <div className="sidebar-channels">
                 <div className="sidebar-channels-header">
                     <div className="sidebar-header">
-                    <ExpandMoreIcon/>
-                    <h4>Text Channels</h4>
+                        <ExpandMoreIcon />
+                        <h4>Text Channels</h4>
                     </div>
-                    <AddIcon onClick={handleAddChannel} className='sidebar-addChannel'/>
+                    <AddIcon onClick={handleChannelName()} className='sidebar-addChannel'/>
                     
                 </div>
                 <div className="sidebar-channelsList">
-                    {channels.map(({id, chanel})=> (
+                    {channels.map(({id, channel})=> (
                      <SidebarChannel 
                      key={id} 
                      id={id} 
@@ -64,7 +64,7 @@ const Sidebar = () => {
             </div>
             </div>
             <div className="sidebar-voice">
-                <SignalCellularAltIcon className='sidebar-voiceIcon' fontSize='large'/>
+                <SignalCellularAltIcon className='sidebar-voiceIcon' fontSize='large' />
                 <div className="sidebar-voiceInfo">
                     <h3>Voice Connected</h3>
                     <p>Stream</p>
@@ -81,17 +81,17 @@ const Sidebar = () => {
                 <Avatar onClick={() => auth.signOut()} src={user.photo}/>
                 <div className="sidebar-profileInfo">
                     <h3>{user.displayName}</h3>
-                    <p>#{user.uid.subString(0,5)}</p>
+                    <p>{user.uid.subString(0,5)}</p>
                 </div>
                 <div className="sidebar-profileIcons">
-                    <MicIcon/>
+                    <MicIcon />
                     <HeadsetIcon />
                     <SettingsIcon />
                 </div>
             </div>
-           
 
-            
+
+
         </div>
     );
 };
